@@ -4,10 +4,10 @@ one:
   account: one
   action: MyString
   amount: 1.5
-  new_balance: 1.5
+  new_balance: MyString
 
 two:
   account: two
   action: MyString
   amount: 1.5
-  new_balance: 1.5
+  new_balance: MyString

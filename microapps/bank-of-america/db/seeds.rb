@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-customers = []
+customers       = []
+journal_entries = []
 
 # Creates Sample Customers
 10.times do
@@ -22,8 +23,8 @@ customers.each do |customer|
   # Create a random balance
   balance = Faker::Number.between(100, 5000)
 
-  # Create a random withdrawal/deposit amount
-  transaction_amount = Faker::Number.between(5, 200)
+  # Create a random number of transaction to perform
+  num_transactions = rand(1..5)
 
   # Create the account for the current customer
   account = customer.accounts.create({
@@ -32,5 +33,19 @@ customers.each do |customer|
   })
 
   # Create a fake account history for the current account
-  #account.account_history.create()
+  num_transactions.times do
+
+    # Create a random withdrawal/deposit amount
+    transaction_amount = Faker::Number.between(5, 200)
+
+    # Determine whether this will be a withdrawal or deposit
+    action = JournalEntry.actions.to_a.sample
+    action = action[0];
+
+    # Record the sample transaction
+    journal_entries << account.journal_entries.create({
+      action: action,
+      amount: transaction_amount
+    })
+  end
 end

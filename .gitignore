@@ -1,0 +1,3 @@
+# Ignore database configurations for Microapps
+/microapps/bank-of-america/config/database.yml
+/microapps/wells-fargo/config/database.yml
