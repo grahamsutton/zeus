@@ -23,3 +23,9 @@ After the instance is created, we call upon Zeus to begin our transaction by sen
 
     # Get the token from the transaction
     token       = transaction['token']
+
+### Making A Request
+
+Below is a sequence diagram that explains the process of a request to Zeus:
+
+![Making A Request](images/making-a-request-seq-diagram.png)
