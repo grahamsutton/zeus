@@ -1,6 +1,6 @@
 # Zeus
 
-A transaction manager for microservices.
+A prototypical transaction manager for microservices.
 
 ---
 
